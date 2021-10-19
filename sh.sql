@@ -33,7 +33,7 @@ CREATE TABLE `Device` (
   KEY `id_device_status` (`id_device_status`),
   CONSTRAINT `device_ibfk_1` FOREIGN KEY (`id_room`) REFERENCES `Room` (`id_room`),
   CONSTRAINT `device_ibfk_2` FOREIGN KEY (`id_device_status`) REFERENCES `DeviceStatus` (`id_device_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `Device` (
 
 LOCK TABLES `Device` WRITE;
 /*!40000 ALTER TABLE `Device` DISABLE KEYS */;
+INSERT INTO `Device` VALUES (1,1,'Light','device desc',2),(2,1,'Fan','device desc',2);
 /*!40000 ALTER TABLE `Device` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +58,7 @@ CREATE TABLE `DeviceStatus` (
   `status` varchar(255) NOT NULL,
   `status_desc` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_device_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +67,7 @@ CREATE TABLE `DeviceStatus` (
 
 LOCK TABLES `DeviceStatus` WRITE;
 /*!40000 ALTER TABLE `DeviceStatus` DISABLE KEYS */;
+INSERT INTO `DeviceStatus` VALUES (1,'ON','Device ON'),(2,'OFF','Device OFF');
 /*!40000 ALTER TABLE `DeviceStatus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +86,7 @@ CREATE TABLE `House` (
   PRIMARY KEY (`id_house`),
   KEY `id_user` (`id_user`),
   CONSTRAINT `house_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `User` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,6 +95,7 @@ CREATE TABLE `House` (
 
 LOCK TABLES `House` WRITE;
 /*!40000 ALTER TABLE `House` DISABLE KEYS */;
+INSERT INTO `House` VALUES (1,1,'House','house desc');
 /*!40000 ALTER TABLE `House` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +114,7 @@ CREATE TABLE `Room` (
   PRIMARY KEY (`id_room`),
   KEY `id_house` (`id_house`),
   CONSTRAINT `room_ibfk_1` FOREIGN KEY (`id_house`) REFERENCES `House` (`id_house`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,6 +123,7 @@ CREATE TABLE `Room` (
 
 LOCK TABLES `Room` WRITE;
 /*!40000 ALTER TABLE `Room` DISABLE KEYS */;
+INSERT INTO `Room` VALUES (1,1,'Master Room','room desc');
 /*!40000 ALTER TABLE `Room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-16 13:57:32
+-- Dump completed on 2021-10-18 23:03:52
