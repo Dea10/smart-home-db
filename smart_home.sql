@@ -50,3 +50,30 @@ CREATE TABLE IF NOT EXISTS Device (
 -- INSERT
 -- INSERT INTO User(user_name, user_email, user_first_name, user_last_name, user_password) VALUES('dea','mail','daniel','espinosa','123');
 -- INSERT INTO User(user_name, user_email, user_first_name, user_last_name, user_password) VALUES('new','mail','new','new','123');
+
+-- INSERT INTO DeviceStatus(status, status_desc) VALUES('ON', 'Device ON');
+-- INSERT INTO DeviceStatus(status, status_desc) VALUES('OFF', 'Device OFF');
+
+-- INSERT INTO House(id_user, house_name) VALUES(1, 'House');
+
+-- INSERT INTO Room(id_house, room_name) VALUES(1, 'Master Room');
+
+-- INSERT INTO Device(
+--     id_room,
+--     device_name,
+--     id_device_status
+-- ) VALUES(
+--     1,
+--     'Light',
+--     2
+-- );
+
+-- INSERT INTO Device(
+--     id_room,
+--     device_name,
+--     id_device_status
+-- ) VALUES(
+--     1,
+--     'Fan',
+--     2
+-- );
